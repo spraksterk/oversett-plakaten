@@ -1,47 +1,49 @@
 <!doctype html>
-<html lang="no">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Oversett plakaten</title>
+  <title>Translate this poster</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px 20px;
       background: white;
       color: #111;
+      margin: 0;
+      padding: 32px 20px;
+      text-align: center;
     }
 
     main {
       max-width: 500px;
-      margin: auto;
+      margin: 0 auto;
     }
 
-    .icon {
-      font-size: 56px;
+    .hero {
+      font-size: 60px;
       margin-bottom: 12px;
     }
 
     h1 {
-      font-size: 28px;
-      margin-bottom: 12px;
+      font-size: 30px;
+      margin-bottom: 10px;
     }
 
-    p {
+    .intro {
       font-size: 18px;
       line-height: 1.5;
+      margin-bottom: 28px;
     }
 
-    a {
+    .button {
       display: block;
       padding: 18px;
-      margin: 16px 0;
-      border-radius: 12px;
+      margin: 14px 0;
+      border-radius: 14px;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: bold;
     }
 
@@ -53,12 +55,19 @@
     .secondary {
       border: 2px solid #111;
       color: #111;
+      background: white;
     }
 
-    .hint {
-      font-size: 16px;
-      color: #555;
-      margin-top: 20px;
+    .steps {
+      margin-top: 32px;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .small {
+      margin-top: 28px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
@@ -67,27 +76,56 @@
 
 <main>
 
-  <div class="icon">🌍📱</div>
+  <div class="hero">🌍 📱 📷</div>
 
   <h1>Translate this poster</h1>
 
-  <p>
-    Use your camera to read the poster in your language.
+  <p class="intro">
+    Use your phone camera to read this poster in your language.
   </p>
 
-  <a class="primary" href="googletranslate:///open/camera">
+  <a
+    class="button primary"
+    href="googletranslate:///open/camera">
     📷 Open camera translation
   </a>
 
-  <a class="secondary" href="https://translate.google.com/">
-    🌐 Open Google Translate
+  <a
+    id="installButton"
+    class="button secondary"
+    href="#">
+    ⬇️ Get Google Translate
   </a>
 
-  <p class="hint">
-    Point your camera at the poster.
+  <div class="steps">
+    <div>1. 📷 Open camera</div>
+    <div>2. 🪧 Point at the poster</div>
+    <div>3. 🌍 Read in your language</div>
+  </div>
+
+  <p class="small">
+    Google Translate app required for camera translation.
   </p>
 
 </main>
+
+<script>
+  const installButton = document.getElementById("installButton");
+
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    installButton.href =
+      "https://play.google.com/store/apps/details?id=com.google.android.apps.translate";
+  } else if (isIOS) {
+    installButton.href =
+      "https://apps.apple.com/app/google-translate/id414706506";
+  } else {
+    installButton.href =
+      "https://translate.google.com/about/";
+  }
+</script>
 
 </body>
 </html>
