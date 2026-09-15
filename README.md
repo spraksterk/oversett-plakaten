@@ -1,1 +1,1 @@
-# plakat-oversett
+# Oversett-plakaten
