@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Oversett plakaten</title>
 
   <style>
@@ -19,8 +20,14 @@
       margin: auto;
     }
 
+    .icon {
+      font-size: 56px;
+      margin-bottom: 12px;
+    }
+
     h1 {
       font-size: 28px;
+      margin-bottom: 12px;
     }
 
     p {
@@ -30,9 +37,9 @@
 
     a {
       display: block;
-      padding: 16px;
+      padding: 18px;
       margin: 16px 0;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
       font-size: 18px;
       font-weight: bold;
@@ -47,6 +54,12 @@
       border: 2px solid #111;
       color: #111;
     }
+
+    .hint {
+      font-size: 16px;
+      color: #555;
+      margin-top: 20px;
+    }
   </style>
 </head>
 
@@ -54,25 +67,24 @@
 
 <main>
 
-  <h1>Les plakaten på ditt språk</h1>
+  <div class="icon">🌍📱</div>
+
+  <h1>Translate this poster</h1>
 
   <p>
-    Trykk på knappen under for å åpne kameraoversettelse i Google Translate.
+    Use your camera to read the poster in your language.
   </p>
 
-  <a class="primary"
-     href="googletranslate:///open/camera">
-    Åpne kameraoversettelse
+  <a class="primary" href="googletranslate:///open/camera">
+    📷 Open camera translation
   </a>
 
-  <a class="secondary"
-     href="https://translate.google.com/">
-    Åpne Google Translate på nett
+  <a class="secondary" href="https://translate.google.com/">
+    🌐 Open Google Translate
   </a>
 
-  <p>
-    Hvis Google Translate-appen ikke er installert,
-    bruk nettversjonen eller installer appen først.
+  <p class="hint">
+    Point your camera at the poster.
   </p>
 
 </main>
